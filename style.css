@@ -604,3 +604,21 @@ body {
   }
 
 
+  /* change plan button */
+  .change__plan {
+    border: none;
+    background-color: transparent;
+    font-size: 1.9rem;
+    color: var(--Cool-gray);
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+  
+  .change__plan:hover {
+    color: var(--Purplish-blue);
+  }
+
+  
+
+
