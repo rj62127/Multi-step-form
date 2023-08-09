@@ -35,17 +35,17 @@
     <!-- ---------- -->
     <!-- TITLE -->
     <!-- ---------- -->
-    <title>Multi-step form</title>
+    <title>Frontend Mentor | Multi-step form</title>
   </head>
   <body>
     <main class="main">
-      <!--------------------->
+      <!-- ----------------- -->
       <!-- WRAPPER -->
-      <!--------------------->
+      <!-- ----------------- -->
       <div class="step__container">
-        <!------------------>
+        <!-- -------------- -->
         <!-- SIDEBAR -->
-        <!------------------>
+        <!-- -------------- -->
         <div class="sidebar">
           <div class="step__indecater">
             <div class="indecater__num">1</div>
@@ -79,7 +79,7 @@
         <!-- form steps container -->
         <div class="steps__container">
           <!-- step1 -->
-          <div class="step active" id="step-1">
+          <form class="step" id="form">
             <h3 class="main__title">Personal info</h3>
             <p class="description">
               Please provide your name, email address, and phone number.
@@ -94,7 +94,7 @@
                   type="text"
                   name="userName"
                   class="input"
-                  placeholder="e.g. Stephan King"
+                  placeholder="e.g. Stephen King"
                   required />
               </li>
               <li class="list__item">
@@ -122,7 +122,7 @@
                   required />
               </li>
             </ul>
-          </div>
+          </form>
           <!-- STEP 2 -->
           <div class="step" id="step-2">
             <h3 class="main__title">Select your plan</h3>
@@ -253,7 +253,7 @@
               <!-- total amount -->
             </div>
           </div>
-          <!-- last step  -->
+          <!-- last step | thank you -->
           <div class="step last__step" id="thank-you">
             <div class="final__img">
               <img src="./assets/images/icon-thank-you.svg" alt="" />
@@ -262,17 +262,17 @@
             <p class="description">
               Thanks for confirming your subscription! We hope you have fun
               using our platform. If you ever need support, please feel free to
-              email us at rjha2.718@gmail.com.
+              email us at support@loremgaming.com.
             </p>
           </div>
           <!-- -------------- -->
           <!-- BUTTON -->
           <!-- -------------- -->
           <div class="button__container">
-            <button class="button prev__button" id="prev-button" onclick="prevButtonClick()">
+            <button class="button prev__button" id="prev-button">
               Go Back
             </button>
-            <button type="submit" class="button next__button" id="next-button" onclick="nextButtonClick()">
+            <button type="submit" class="button next__button" id="next-button">
               Next Step
             </button>
           </div>
