@@ -265,3 +265,70 @@ addsonCards.forEach((card) => {
 
 // STEP-4 | FINISHING UP
 
+// RENDER SELECTED PLAN, SELECTED ADD-ON AND TOTAL AMOUNT
+const renderTotal = () => {
+  // totalAmount to store total amount
+  let totalAmount = 0;
+  // plan duration in full-form [mo to montly or yr to yearly]
+  const planDuration = selectedPlan.planDur == 'mo' ? 'Monthly' : 'Yearly';
+  // selecte element to append selected plan. add-on and total price
+  const plan = document.getElementById('selected-plan');
+  const addsOnList = document.getElementById('selected-addon');
+  const total = document.getElementById('total');
+
+  // clear innerHTML of the selected elements
+  total.innerHTML = '';
+  addsOnList.innerHTML = '';
+  plan.innerHTML = '';
+
+  // add selected plan
+  let planName = document.createElement('p');
+  planName.textContent = selectedPlan.planName;
+
+  let dur = document.createElement('p');
+  dur.textContent = `(${planDuration})`;
+
+  let planPrice = document.createElement('p');
+  planPrice.textContent = `${selectedPlan.planPrice}/${selectedPlan.planDur}`;
+  // append selected plan to the plan
+  plan.appendChild(planName);
+  plan.appendChild(dur);
+  plan.appendChild(planPrice);
+
+  // add selectedplan price in total amount
+  totalAmount += parseInt(selectedPlan.planPrice);
+
+  // add selected add-on in addsOnList
+  selectedAddsOn().forEach((item) => {
+    // create listItem to store selected add-on details
+    let listItem = document.createElement('li');
+    // addOnName to store add-on title
+    let addOnName = document.createElement('p');
+    addOnName.textContent = item.name;
+    // addOnprice for add-on price and plan duration
+    let addOnprice = document.createElement('p');
+    addOnprice.textContent = `+$${item.price}/${item.planDur}`;
+
+    // append  addOnName and addOnprice to the listItem
+    listItem.appendChild(addOnName);
+    listItem.appendChild(addOnprice);
+    // add list item to then addOnlist
+    addsOnList.appendChild(listItem);
+
+    // add price to the total price
+    totalAmount += parseInt(item.price);
+  });
+
+  // inner html for total
+  total.innerHTML = `<span>Total(
+    per ${planDuration.slice(0, -2).toLocaleLowerCase()}) </span> 
+      <span> $${totalAmount}/${selectedPlan.planDur}</span>`;
+};
+
+// function to handle change button
+changePlanBtn.addEventListener('click', () => {
+  // reassign stepNum to 0
+  stepNum = 0;
+  // show stepNum
+  showStep(stepNum);
+});
