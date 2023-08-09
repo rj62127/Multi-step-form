@@ -79,7 +79,7 @@
         <!-- form steps container -->
         <div class="steps__container">
           <!-- step1 -->
-          <form class="step" id="form">
+          <div class="step active" id="step-1">
             <h3 class="main__title">Personal info</h3>
             <p class="description">
               Please provide your name, email address, and phone number.
@@ -122,7 +122,7 @@
                   required />
               </li>
             </ul>
-          </form>
+          </div>
           <!-- STEP 2 -->
           <div class="step" id="step-2">
             <h3 class="main__title">Select your plan</h3>
@@ -269,10 +269,10 @@
           <!-- BUTTON -->
           <!-- -------------- -->
           <div class="button__container">
-            <button class="button prev__button" id="prev-button">
+            <button class="button prev__button" id="prev-button" onclick="prevButtonClick()">
               Go Back
             </button>
-            <button type="submit" class="button next__button" id="next-button">
+            <button type="submit" class="button next__button" id="next-button" onclick="nextButtonClick()">
               Next Step
             </button>
           </div>
